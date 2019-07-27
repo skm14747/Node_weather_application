@@ -3,6 +3,8 @@ const express = require('express');
 const hbs = require('hbs');
 const weather = require('./util/weather.js');
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public');
 
@@ -83,6 +85,6 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('server is listing on 3000 post');
+app.listen(port, () => {
+  console.log(`server is listing on ${port} port`);
 });
